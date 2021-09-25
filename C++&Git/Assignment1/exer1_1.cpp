@@ -9,21 +9,20 @@ int main()
     long secRaw = 0;
 
     // the output, how many days, hours, minutes, seconds
-    int day = 0, hour = 0, min = 0, sec = 0;
+    int hour , min , sec;
 
     // get input from the console
     cout << "Enter the number of seconds: " << endl;
     cin >> secRaw;
-
+    cout << secRaw;
     /* Write your code under this line */
-    // day = ?
-    // hour = ?
-    // min = ?
-    // sec = ?
+    sec = secRaw%60 , secRaw -= sec , secRaw /= 60;
+    min = secRaw%60 , secRaw -= min , secRaw /= 60;
+    hour = secRaw%24 , secRaw -= hour , secRaw /= 24;
     /* Write your code above this line */
 
     // output the result
-    cout << secRaw << " seconds = " << day << " days, " << hour << " hours, " << min << " mins, " << sec << " secs." << endl;
+    cout << " seconds = " << secRaw << " days, " << hour << " hours, " << min << " mins, " << sec << " secs." << endl;
 
     // end of the program
     return 0;
