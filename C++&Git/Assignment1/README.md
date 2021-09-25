@@ -14,15 +14,32 @@ Before doing this assignment, you should already know the following things:
 1. Please write down the upper and lower bound of the following types:
 
    - For example: **uint16_t**: 0~65535
-   - **uint8_t** 
-   - **int8_t** 
-   - **int16_t**   
+   - **uint8_t** 0~255
+   - **int8_t**  -128~127
+   - **int16_t**   -32768~32767
      (Please read [this page](https://stackoverflow.com/questions/5054979/why-is-uint-8-etc-used-in-c-c) if you do not know uint8_t and int8_t)
 
 2. What is the difference between the following values (What is their default type in C++)  
-   2022 2022L 2022.0 2022.0f
+   2022 2022L 2022.0 2022.0f int string double float
 
 3. Define a structure, which includes year, month, day and time information. Then define a variable of this structure and initialize it.
+
+#include<iostream>
+#include<ctime>
+using namespace std;
+struct ttttt{
+    int y,m,d,hh,mm,ss;
+};
+ttttt cur;
+int main(){
+    time_t now=time(0);
+    tm *ltm=localtime(&now);
+    cur.y=1900+ltm->tm_year,cur.m=1+ltm->tm_mon,cur.d=ltm->tm_mday;
+    cur.hh=ltm->tm_hour,cur.mm=ltm->tm_min,cur.ss=ltm->tm_sec;
+    cout<<cur.m<<'.'<<cur.d<<'.'<<cur.y<<' ';
+    cout<<cur.hh<<":"<<cur.mm<<":"<<cur.ss<<endl;
+    return 0;
+}
 
 ## Programing Exercise
 
