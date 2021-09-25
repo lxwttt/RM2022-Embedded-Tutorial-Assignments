@@ -1,5 +1,6 @@
 // I/O stream library from std, for using cin and cout
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 // the starting of program
@@ -14,15 +15,17 @@ int main()
     // get input from the console
     cout << "Enter the float number of hours: " << endl;
     cin >> hourRaw;
-
+    hour = floor(hourRaw);
+    cout << hourRaw << " hours = " << hour << " hours, ";
     /* Write your code under this line */
-    // hour = ?
-    // min = ?
-    // sec = ?
+    hourRaw -= hour , hourRaw *= 60;
+    min = floor(hourRaw);
+    hourRaw -= min , hourRaw *= 60;
+    sec = floor(hourRaw);
     /* Write your code above this line */
 
     // output the result
-    cout << hourRaw << " hours = " << hour << " hours, " << min << " mins, " << sec << " secs." << endl;
+    cout << min << " mins, " << sec << " secs." << endl;
 
     // end of the program
     return 0;
